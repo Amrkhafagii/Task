@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import java.io.IOException;
+import java.time.Duration;
 import java.util.List;
 
 import static org.testng.Assert.assertEquals;
@@ -46,7 +47,7 @@ public class userScreen {
 
 
     public void PlaceOrder() throws IOException {
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.visibilityOfElementLocated(Card_btn));
         driver.findElement(Card_btn).click();
 
@@ -74,7 +75,7 @@ public class userScreen {
 
 
     public void RemoveItem() throws IOException {
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(Card_btn));
@@ -85,7 +86,7 @@ public class userScreen {
     }
 
     public void Order() throws IOException {
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(Card_btn));
@@ -98,7 +99,7 @@ public class userScreen {
 
     public void AddItem() throws IOException {
 
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         driver.findElement(FProduct).click();
         wait.until(ExpectedConditions.visibilityOfElementLocated(AddToCard_btn));
         driver.findElement(AddToCard_btn).click();
@@ -118,7 +119,7 @@ public class userScreen {
 
     public void ItemCheck() throws IOException {
 
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.visibilityOfElementLocated(NameOfUser_btn));
         List<WebElement> products = driver.findElements(By.id("tbodyid"));
 

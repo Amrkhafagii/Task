@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+
 public class landingScreen {
 
     WebDriver driver;
@@ -38,7 +40,7 @@ public class landingScreen {
     }
 
     public void Register() {
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         driver.findElement(Signup_btn).click();
         wait.until(ExpectedConditions.presenceOfElementLocated(modal_dialog));
         wait.until(ExpectedConditions.visibilityOfElementLocated(Username_lbl));
@@ -51,7 +53,7 @@ public class landingScreen {
     }
 
     public void Login() {
-        WebDriverWait wait = new WebDriverWait(driver, 30);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
         driver.findElement(Login_btn).click();
         wait.until(ExpectedConditions.presenceOfElementLocated(modal_dialog_login));
         wait.until(ExpectedConditions.visibilityOfElementLocated(Username_lbl_login));
